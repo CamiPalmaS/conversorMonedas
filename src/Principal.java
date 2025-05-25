@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         int opcion = 0;
-        String moneda1 = "";
-        String moneda2 = "";
-        String cantidad = "";
+        String moneda1;
+        String moneda2;
+        String cantidad;
         String menu = """
                 ******************
                 Bienvenido al conversor de monedas. Qué conversión quiere realizar?
