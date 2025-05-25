@@ -29,6 +29,7 @@ public class Principal {
                 System.out.println("Opción no válida. Por favor, ingrese un número del 1 al 7.");
                 continue; // Vuelve al menú
             }
+
             switch (opcion){
                 case 1:
                     moneda1 = "USD";
