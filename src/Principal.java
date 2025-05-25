@@ -66,6 +66,8 @@ public class Principal {
                     cantidad = teclado.nextLine();
                     new Consultar(moneda1, moneda2, cantidad);
                     break;
+                case 7:
+                    break;
                 default:
                     System.out.println("Opción no válida");
             }
