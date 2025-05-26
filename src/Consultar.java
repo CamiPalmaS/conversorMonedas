@@ -6,13 +6,26 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 public class Consultar {
     public Consultar(String moneda1, String moneda2, String cantidad){
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .create();
 
-        String apiKey = "4bfaffbc4abfb98ae6463245";
+        Properties prop = new Properties();
+        try {
+            FileInputStream input = new FileInputStream("config.properties");
+            prop.load(input);
+        } catch (IOException e) {
+            System.out.println("Error al leer archivo de configuración.");
+            return;
+        }
+
+        String apiKey = prop.getProperty("API_KEY");
         String direccion = "https://v6.exchangerate-api.com/v6/"
                 + apiKey + "/pair/"
                 +moneda1+ "/"
